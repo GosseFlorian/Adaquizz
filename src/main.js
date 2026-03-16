@@ -1,6 +1,7 @@
 import './style.css'
 import quiz from "./quiz-femmes-scientifiques.json";
 import { showQuestion } from './show-question';
+import { showCreateQuizz } from './createQuizz';
 
 document.querySelector('#app').innerHTML = `
     <h1>${quiz.title}</h1>
