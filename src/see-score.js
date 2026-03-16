@@ -34,7 +34,7 @@ export function seeScore(){
         `  
     }
     document.querySelector('#replayQuizz').addEventListener('click', () =>{
-        localStorage.clear()
+        localStorage.removeItem("previousScore")
         localStorage.setItem("previousScore",`${pourcentage}`)
         variable.score = 0
         variable.indexQuestion = 0
