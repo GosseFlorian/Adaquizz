@@ -3,8 +3,8 @@ import { acceuil } from "./acceuil";
 //     console.log(localStorage.key(index))
 //     console.log(localStorage.getItem(`${localStorage.key(index)}`))
 // }
-//
-//     {
+// localStorage.removeItem('test')
+// {
 //   "title": "Mon quiz",
 //   "questions": [
 //     {
