@@ -16,7 +16,16 @@ export function changeJson(){
             choices.push(choice.value);
         });
 
-        questions.push({question: questionText, choices: choices});
+        const correctInput = responseElements[index].querySelector('.correct-choice');
+        let correctIndex = parseInt(correctInput.value) - 1; // ⚠️ index (0-3)
+
+
+
+        questions.push({
+            question: questionText,
+            options: choices,
+            correctIndex: correctIndex
+            });
     })
     const newQuiz = {
         title: title,
