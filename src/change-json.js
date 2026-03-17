@@ -1,4 +1,5 @@
 import './style.css'
+import { acceuil } from './acceuil'
 
 export function changeJson(){
     const title = document.querySelector('#title').value
@@ -23,11 +24,9 @@ export function changeJson(){
     };
     const json = JSON.stringify(newQuiz)
     localStorage.setItem(`${newQuiz.title}`, json)
-    
+    acceuil()
     // for (let index = 0; index < localStorage.length; index++) {
     //     console.log(localStorage.key(index))
     //     console.log(localStorage.getItem(`${localStorage.key(index)}`))
     // }
-    
-    //ajouter un retour au main (faire un js acceuil ?)
 }
