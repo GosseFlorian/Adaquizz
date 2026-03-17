@@ -28,6 +28,8 @@ document.querySelector('#app').innerHTML = `
                     <input class="choice" type="text" placeholder="Reponse 2"/>
                     <input class="choice" type="text" placeholder="Reponse 3"/>
                     <input class="choice" type="text" placeholder="Reponse 4"/>
+                    <label for="correct-choice">Bonne réponse ?</label>
+                    <input type="number" class="correct-choice" min="1" max="4"/>
                 </div>
             `
         }
