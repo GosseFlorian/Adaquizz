@@ -1,5 +1,5 @@
 import './style.css'
-import { changeJson } from './change-json'
+import { storageNewQuizz } from './storage-new-quizz'
 
 export function showCreateQuizz(){
 document.querySelector('#app').innerHTML = `
@@ -35,6 +35,6 @@ document.querySelector('#app').innerHTML = `
         }
     })
     document.querySelector('#CreateNewQuizz').addEventListener('click', async() =>{
-            changeJson()
+            storageNewQuizz()
     })
 }
