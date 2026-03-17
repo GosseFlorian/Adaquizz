@@ -1,9 +1,8 @@
 import './style.css'
-import quiz from "./quiz-femmes-scientifiques.json";
 import { variable } from './variable';
 import confetti from 'canvas-confetti';
 
-export function showQuestion(){
+export function showQuestion(quiz){
     document.querySelector('#app').innerHTML = `
         <h2 id="question">${quiz.questions[variable.indexQuestion].question}</h2>
         <div id="meter-bar">
@@ -38,7 +37,7 @@ export function showQuestion(){
                 `
                 document.querySelector('#nextQuestion').addEventListener('click', async() =>{
                     const { showQuestion } = await import('./show-question');
-                    showQuestion()
+                    showQuestion(quiz)
                 })
             } else {
                 document.querySelector('#app').innerHTML += `
@@ -46,7 +45,7 @@ export function showQuestion(){
                 `
                 document.querySelector('#seeScore').addEventListener('click', async() =>{
                     const { seeScore } = await import('./see-score');
-                    seeScore()
+                    seeScore(quiz)
                 })
             }
         })
