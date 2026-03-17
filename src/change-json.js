@@ -1,5 +1,4 @@
 import './style.css'
-import quiz from "./quiz-femmes-scientifiques.json";
 
 export function changeJson(){
     const title = document.querySelector('#title').value
@@ -25,8 +24,10 @@ export function changeJson(){
     const json = JSON.stringify(newQuiz)
     localStorage.setItem(`${newQuiz.title}`, json)
     
-    for (let index = 0; index < localStorage.length; index++) {
-        console.log(localStorage.key(index))
-        console.log(localStorage.getItem(`${localStorage.key(index)}`))
-    }
+    // for (let index = 0; index < localStorage.length; index++) {
+    //     console.log(localStorage.key(index))
+    //     console.log(localStorage.getItem(`${localStorage.key(index)}`))
+    // }
+    
+    //ajouter un retour au main (faire un js acceuil ?)
 }
