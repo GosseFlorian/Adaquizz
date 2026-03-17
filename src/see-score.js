@@ -1,9 +1,8 @@
 import './style.css'
-import quiz from "./quiz-femmes-scientifiques.json";
 import { variable } from './variable';
 import { showQuestion } from './show-question';
 
-export function seeScore(){
+export function seeScore(quiz){
     let pourcentage = (variable.score / quiz.questions.length) * 100
     let messageScore = null
     if(pourcentage >= 100){
@@ -38,6 +37,6 @@ export function seeScore(){
         localStorage.setItem("previousScore",`${pourcentage}`)
         variable.score = 0
         variable.indexQuestion = 0
-        showQuestion()
+        showQuestion(quiz)
     })
 }
