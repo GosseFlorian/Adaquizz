@@ -1,6 +1,6 @@
 import './style.css'
 import { variable } from './variable';
-import { showQuestion } from './show-question';
+import { acceuil } from './acceuil';
 
 export function seeScore(quiz){
     let pourcentage = (variable.score / quiz.questions.length) * 100
@@ -37,6 +37,6 @@ export function seeScore(quiz){
         localStorage.setItem("previousScore",`${pourcentage}`)
         variable.score = 0
         variable.indexQuestion = 0
-        showQuestion(quiz)
+        acceuil()
     })
 }
