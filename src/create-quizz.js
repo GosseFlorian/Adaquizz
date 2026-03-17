@@ -1,4 +1,5 @@
 import './style.css'
+import { changeJson } from './change-json'
 
 export function showCreateQuizz(){
 document.querySelector('#app').innerHTML = `
