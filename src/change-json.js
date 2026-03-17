@@ -24,5 +24,9 @@ export function changeJson(){
     };
     const json = JSON.stringify(newQuiz)
     localStorage.setItem(`${newQuiz.title}`, json)
-    console.log(localStorage.getItem(`${newQuiz.title}`))
+    
+    for (let index = 0; index < localStorage.length; index++) {
+        console.log(localStorage.key(index))
+        console.log(localStorage.getItem(`${localStorage.key(index)}`))
+    }
 }
