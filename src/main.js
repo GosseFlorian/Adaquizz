@@ -1,10 +1,10 @@
 import './style.css'
-import quiz from "./quiz-femmes-scientifiques.json";
 import { showQuestion } from './show-question';
 import { showCreateQuizz } from './create-quizz';
 
 document.querySelector('#app').innerHTML = `
-    <h1>${quiz.title}</h1>
+    <h1>Adaquizz</h1>
+    <h2>choisi ton quizz :</h2>
     <div id="choose-quizz"></div>
     <button id="start">Démarrer</button>
     <button id="create-quizz">New quizz</button>
@@ -16,5 +16,16 @@ document.querySelector('#app').innerHTML = `
             <label for="radio-${key}">${key}</label><br>
         `
     }
-document.querySelector('#start').addEventListener('click',showQuestion)
+
+document.querySelector('#start').addEventListener('click',() => {
+    const selected = document.querySelector('input[name="quizz"]:checked');
+    if (!selected) {
+        alert("Choisis un quiz !");
+        return;
+    }
+    const selectedKey = selected.value;
+    const quiz = JSON.parse(localStorage.getItem(selectedKey));
+    showQuestion(quiz);
+})
+
 document.querySelector('#create-quizz').addEventListener('click', showCreateQuizz)
