@@ -1,7 +1,7 @@
 import './style.css'
 import quiz from "./quiz-femmes-scientifiques.json";
 import { showQuestion } from './show-question';
-import { showCreateQuizz } from './createQuizz';
+import { showCreateQuizz } from './create-quizz';
 
 document.querySelector('#app').innerHTML = `
     <h1>${quiz.title}</h1>
@@ -9,7 +9,7 @@ document.querySelector('#app').innerHTML = `
     <button id="create-quizz">New quizz</button>
     `
 
-let json = JSON.stringify(quiz)
-localStorage.setItem(`${quiz.title}`,json)
+// let json = JSON.stringify(quiz)
+// localStorage.setItem(`${quiz.title}`,json)
 document.querySelector('#start').addEventListener('click',showQuestion)
 document.querySelector('#create-quizz').addEventListener('click', showCreateQuizz)
