@@ -17,7 +17,5 @@ export function showCreateQuizz() {
   let createNewQuizz = document.querySelector("#CreateNewQuizz");
 
   numberQuestion.addEventListener("input", numberQuestionNewQuiz);
-  createNewQuizz.addEventListener("click", async () => {
-      storageNewQuizz();
-    });
+  createNewQuizz.addEventListener("click", storageNewQuizz);
 }
