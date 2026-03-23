@@ -1,21 +1,12 @@
 import './style.css'
 import { variable } from './variable';
 import { acceuil } from './acceuil';
+import { getMessageScore } from './message-score';
 
 export function seeScore(quiz){
     let pourcentage = (variable.score / quiz.questions.length) * 100
-    let messageScore = null
-    if(pourcentage >= 100){
-        messageScore = "Aucune erreur, c'est parfait 😎"
-    } else if(pourcentage >= 80){
-        messageScore = "C'est bien, tu as fait peu d'erreurs 😉"
-    } else if(pourcentage >= 50){
-        messageScore = "C'est pas mal, mais tu peux encore t'améliorer 💪"
-    } else if(pourcentage < 50 && pourcentage > 0){
-        messageScore = "Aïe, tu as beaucoup d'erreurs, tu devrais réessayer 😅"
-    } else {
-        messageScore = "Oups ! Tu n'as trouvé aucune bonne réponse 😱"
-    }
+    let messageScore = getMessageScore(pourcentage)
+
     document.querySelector('#app').innerHTML =`
         <h2 id="scoreMessage">${messageScore}</h2>
         `
