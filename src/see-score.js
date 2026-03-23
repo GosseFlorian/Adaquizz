@@ -1,7 +1,7 @@
 import './style.css'
 import { variable } from './variable';
-import { acceuil } from './acceuil';
 import { getMessageScore } from './message-score';
+import { replayQuiz } from './replay-quizz';
 
 export function seeScore(quiz){
     let pourcentage = (variable.score / quiz.questions.length) * 100
@@ -23,11 +23,7 @@ export function seeScore(quiz){
             <button id="replayQuizz">Restart</button>
         `  
     }
-    document.querySelector('#replayQuizz').addEventListener('click', () =>{
-        localStorage.removeItem("previousScore")
-        localStorage.setItem("previousScore",`${pourcentage}`)
-        variable.score = 0
-        variable.indexQuestion = 0
-        acceuil()
+    document.querySelector('#replayQuizz').addEventListener('click', async() =>{
+        replayQuiz(pourcentage)
     })
 }
