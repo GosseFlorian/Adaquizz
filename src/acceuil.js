@@ -17,8 +17,6 @@ export function acceuil(){
         <label for="radio-${key}">${key}</label><br>
         `
     }
-    
     document.querySelector('#start').addEventListener('click', startQuizz)
-    
     document.querySelector('#create-quizz').addEventListener('click', showCreateQuizz)
 }
