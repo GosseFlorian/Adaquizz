@@ -1,5 +1,6 @@
 import './style.css'
 import { variable } from './variable';
+import { nextQuestion } from './next-question';
 import confetti from 'canvas-confetti';
 
 export function showQuestion(quiz){
@@ -30,24 +31,7 @@ export function showQuestion(quiz){
                     <p id="badAnswer">Raté, la réponse était : ${quiz.questions[variable.indexQuestion].options[quiz.questions[variable.indexQuestion].correctIndex]}</p>
                 `
             }
-            if(variable.indexQuestion < quiz.questions.length -1){
-                variable.indexQuestion ++
-                document.querySelector('#app').innerHTML += `
-                    <button id="nextQuestion">Continue</button>
-                `
-                document.querySelector('#nextQuestion').addEventListener('click', async() =>{
-                    const { showQuestion } = await import('./show-question');
-                    showQuestion(quiz)
-                })
-            } else {
-                document.querySelector('#app').innerHTML += `
-                    <button id="seeScore">Score</button>
-                `
-                document.querySelector('#seeScore').addEventListener('click', async() =>{
-                    const { seeScore } = await import('./see-score');
-                    seeScore(quiz)
-                })
-            }
+            nextQuestion(quiz)
         })
     })
 }
