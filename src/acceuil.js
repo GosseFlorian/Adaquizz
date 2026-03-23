@@ -1,6 +1,7 @@
 import './style.css'
 import { showCreateQuizz } from './create-quizz';
 import { startQuizz } from './start-quiz';
+import { quizSelector } from './quiz-selector';
 
 export function acceuil(){
     document.querySelector('#app').innerHTML = `
@@ -10,13 +11,7 @@ export function acceuil(){
     <button id="start">Démarrer</button>
     <button id="create-quizz">New quizz</button>
     `
-    for (let i = 1; i < localStorage.length; i++) {
-        const key = localStorage.key(i)
-        document.querySelector('#choose-quizz').innerHTML +=`
-        <input type="radio" name="quizz" value="${key}" id="radio-${key}">
-        <label for="radio-${key}">${key}</label><br>
-        `
-    }
+    quizSelector()
     document.querySelector('#start').addEventListener('click', startQuizz)
     document.querySelector('#create-quizz').addEventListener('click', showCreateQuizz)
 }
