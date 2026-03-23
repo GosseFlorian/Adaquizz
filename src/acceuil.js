@@ -1,6 +1,6 @@
 import './style.css'
-import { showQuestion } from './show-question';
 import { showCreateQuizz } from './create-quizz';
+import { startQuizz } from './start-quiz';
 
 export function acceuil(){
     document.querySelector('#app').innerHTML = `
@@ -18,16 +18,7 @@ export function acceuil(){
         `
     }
     
-    document.querySelector('#start').addEventListener('click',() => {
-        const selected = document.querySelector('input[name="quizz"]:checked');
-        if (!selected) {
-            alert("Choisis un quiz !");
-            return;
-        }
-        const selectedKey = selected.value;
-        const quiz = JSON.parse(localStorage.getItem(selectedKey));
-        showQuestion(quiz);
-    })
+    document.querySelector('#start').addEventListener('click', startQuizz)
     
     document.querySelector('#create-quizz').addEventListener('click', showCreateQuizz)
 }
